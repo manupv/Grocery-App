@@ -34,17 +34,4 @@ export class CategoriesComponent implements OnInit {
       	this.alertService.error(err._body);
       });
   }
-
-  // To add a category
-  addCategory() {
-    this.categoriesService.addCategory().subscribe(
-      res => {
-        // if(res.status == 200) {
-        // 	this.categories = res.json();
-        // }
-      },
-      err => {
-      	this.alertService.error(err._body);
-      });
-  }
 }

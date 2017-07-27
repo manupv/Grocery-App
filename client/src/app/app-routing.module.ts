@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { AddCategoryComponent } from './categories/add-category.component'
 import { AuthGuard } from './guards/auth.guard'
 
 const routes: Routes = [
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'add_category',
+    component: AddCategoryComponent,
     canActivate: [AuthGuard]
   }
 ];

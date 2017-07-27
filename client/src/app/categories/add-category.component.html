@@ -1,0 +1,18 @@
+<!-- <form (ngSubmit)="addCategory()" #f="ngForm" > -->
+<form (ngSubmit)="addCategory()" #categoryForm="ngForm">
+
+	<div class="row">
+		<div class="input-field col s12">
+			<input id="name" type="text" required name='name' [(ngModel)]="category.name">
+			<label for="name">Name</label>
+		</div>
+
+		<div class="col s12 ">
+			<button type="submit" [disabled]="!categoryForm.form.valid" class="waves-effect waves-light btn blue right">
+				Save
+			</button>
+		</div>
+	</div>
+
+</form>
+

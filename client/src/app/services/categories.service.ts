@@ -18,9 +18,12 @@ export class CategoriesService {
     return this.http.get('http://localhost:3000/categories', { headers: contentHeaders })
 		.map((res: Response) => res);
   }
+
   // To add a category
-  addCategory() {
-    return this.http.post('http://localhost:3000/categories', { headers: contentHeaders })
-		.map((res: Response) => res);
+  addCategory(category) {
+    let body = JSON.stringify({ category: category });
+
+    return this.http.post('http://localhost:3000/categories', body, { headers: contentHeaders })
+      .map((res: Response) => res);
   }
 }

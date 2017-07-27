@@ -13,6 +13,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoriesComponent } from './categories/categories.component'
+import { AddCategoryComponent } from './categories/add-category.component'
 import { AuthService, AlertService, CategoriesService } from './services/index';
 
 import { AlertDirective } from './directives/alert.directive';
@@ -29,7 +30,8 @@ import { AuthGuard } from './guards/auth.guard';
     RegisterFormComponent,
     AlertDirective,
     ProfileComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,
