@@ -14,6 +14,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoriesComponent } from './categories/categories.component'
 import { AddCategoryComponent } from './categories/add-category.component'
+import { EditCategoryComponent } from './categories/edit-category.component'
 import { AuthService, AlertService, CategoriesService } from './services/index';
 
 import { AlertDirective } from './directives/alert.directive';
@@ -31,7 +32,8 @@ import { AuthGuard } from './guards/auth.guard';
     AlertDirective,
     ProfileComponent,
     CategoriesComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,

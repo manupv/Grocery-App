@@ -1,16 +1,43 @@
 <div class="row">
 	<div class="col l8 s12 offset-l2">
 		<a [routerLink]="['/add_category']" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
+
+		<a (click)="openModal('addCategory')" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
+		
+
+
+		<a (click)="openModal('addCategory')" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
 	</div>
 	<div class="col l8 s12 offset-l2">
-    
+	
 		<ul class="collection" *ngIf="categories">
 			<li class="collection-item" *ngFor="let category of categories">
 				<img src="images/yuna.jpg" alt="" class="circle">
 				<span class="title">{{category.name}}</span>
-				<a href="#" class="secondary-content"><i class="material-icons">mode_edit</i></a>
-		    </li>
+				<a class="secondary-content" (click)="openModal('editCategory')"><i class="material-icons">mode_edit</i></a>
+			</li>
 		</ul>
-            
+			
 	</div>
 </div>
+
+<div class="modal" materialize="modal" [materializeActions]="modalActions">
+	<div class="modal-content">
+		<div class="row">
+			<div class="row">
+				<span class="modal-close right">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</span>
+			</div>
+
+			<div class="row">
+				<h3 class="grey-text text-darken-2">{{categoryActionMode}}</h3>
+
+				<add-category *ngIf="isAddMode()"></add-category>
+				<edit-category *ngIf="isEditMode()"></edit-category>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <app-auth-dialog #authDialog></app-auth-dialog> -->
