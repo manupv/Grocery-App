@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter, ViewChild, Input } from '@angu
 import { CategoriesService, AlertService } from '../services/index';
 import 'rxjs/Rx';
 import { MaterializeAction } from 'angular2-materialize';
+import { TitleCasePipe } from '../pipes/title-case.pipe';
+import { HumanizePipe } from '../pipes/humanize.pipe';
 
 @Component({
   selector: 'app-categories',

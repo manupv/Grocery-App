@@ -17,6 +17,9 @@ import { AddCategoryComponent } from './categories/add-category.component'
 import { EditCategoryComponent } from './categories/edit-category.component'
 import { AuthService, AlertService, CategoriesService } from './services/index';
 
+import { TitleCasePipe } from './pipes/title-case.pipe';
+import { HumanizePipe } from './pipes/humanize.pipe';
+
 import { AlertDirective } from './directives/alert.directive';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -33,7 +36,9 @@ import { AuthGuard } from './guards/auth.guard';
     ProfileComponent,
     CategoriesComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    TitleCasePipe,
+    HumanizePipe
   ],
   imports: [
     BrowserModule,

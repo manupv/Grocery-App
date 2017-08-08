@@ -3,10 +3,6 @@
 		<a [routerLink]="['/add_category']" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
 
 		<a (click)="openModal('addCategory')" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
-		
-
-
-		<a (click)="openModal('addCategory')" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
 	</div>
 	<div class="col l8 s12 offset-l2">
 	
@@ -31,7 +27,7 @@
 			</div>
 
 			<div class="row">
-				<h3 class="grey-text text-darken-2">{{categoryActionMode}}</h3>
+				<h3 class="grey-text text-darken-2">{{ categoryActionMode | humanize }}</h3>
 
 				<add-category *ngIf="isAddMode()"></add-category>
 				<edit-category *ngIf="isEditMode()"></edit-category>
@@ -39,5 +35,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <app-auth-dialog #authDialog></app-auth-dialog> -->
