@@ -2,7 +2,7 @@
 	<div class="col l8 s12 offset-l2">
 		<a [routerLink]="['/add_category']" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
 
-		<a (click)="openModal('addCategory')" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
+		<a (click)="presentAuthDialog('addCategory')" class="waves-effect waves-light btn category-add"><i class="material-icons left">add</i>Add Category</a>
 	</div>
 	<div class="col l8 s12 offset-l2">
 	
@@ -10,14 +10,15 @@
 			<li class="collection-item" *ngFor="let category of categories">
 				<img src="images/yuna.jpg" alt="" class="circle">
 				<span class="title">{{category.name}}</span>
-				<a class="secondary-content" (click)="openModal('editCategory')"><i class="material-icons">mode_edit</i></a>
+				<a class="secondary-content" (click)="presentAuthDialog('editCategory', category)"><i class="material-icons">mode_edit</i></a>
+				<a class="secondary-content" (click)="deleteCategory(category)"><i class="material-icons">mode_delete</i></a>
 			</li>
 		</ul>
 			
 	</div>
 </div>
-
-<div class="modal" materialize="modal" [materializeActions]="modalActions">
+<app-modal-dialog #modalDialog></app-modal-dialog>
+<!-- <div id="modal" class="modal" materialize="modal" [materializeActions]="modalActions">
 	<div class="modal-content">
 		<div class="row">
 			<div class="row">
@@ -34,4 +35,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->

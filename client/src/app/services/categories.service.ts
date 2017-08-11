@@ -26,4 +26,20 @@ export class CategoriesService {
     return this.http.post('http://localhost:3000/categories', body, { headers: contentHeaders })
       .map((res: Response) => res);
   }
+
+  // To edit a category
+  editCategory(category) {
+    let body = JSON.stringify({ category: category });
+
+    return this.http.put('http://localhost:3000/categories/' + category.id.toString(), body, { headers: contentHeaders })
+      .map((res: Response) => res);
+  }
+
+  // To delete a category
+  deleteCategory(category) {
+    let body = JSON.stringify({ category: category });
+
+    return this.http.delete('http://localhost:3000/categories/' + category.id.toString(), { headers: contentHeaders })
+      .map((res: Response) => res);
+  }
 }

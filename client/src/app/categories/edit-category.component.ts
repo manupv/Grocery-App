@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { CategoriesService, AlertService } from '../services/index';
+import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
+import { CategoriesComponent } from './categories.component';
 import { Category } from '../models/index';
 import { Router } from '@angular/router';
 import 'rxjs/Rx';
@@ -11,32 +13,37 @@ import 'rxjs/Rx';
 })
 export class EditCategoryComponent implements OnInit {
 
-  category = new Category(1, '');
+  selectedCategory = new Category(1, '');
 
-	@Output() onFormResult = new EventEmitter<any>();
+  @Output() onFormResult = new EventEmitter<any>();
+  @ViewChild('modalDialog') modalDialog: ModalDialogComponent;
+  @Output() changeCategory: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     protected categoriesService: CategoriesService,
     private alertService: AlertService,
-    public router: Router
+    public router: Router,
+    public categoryComponent: CategoriesComponent
   ) { }
 
   ngOnInit() {
+    // this.selectedCategory = this.categoryComponent.selectedCategory;
+    // this.changeCategory.emit(this.selectedCategory);
   }
 
-  // To add a category
-  editCategory() {
-    this.categoriesService.addCategory(this.category).subscribe(
-      res => {
-        if(res.status == 200) {
-          this.router.navigate(['categories']);
-        }
-        else {
-          this.alertService.error('Failed to add category');
-        }
-      },
-      err => {
-        this.alertService.error(err._body);
-      });
-  }
+  // To edit a category
+  // editCategory() {
+  //   this.categoriesService.editCategory(this.selectedCategory).subscribe(
+  //     res => {
+  //       if(res.status == 200) {
+  //         this.selectedCategory = res.json();
+  //       }
+  //       else {
+  //         this.alertService.error('Failed to edit category');
+  //       }
+  //     },
+  //     err => {
+  //       this.alertService.error(err._body);
+  //     });
+  // }
 }

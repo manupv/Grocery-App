@@ -1,8 +1,8 @@
-<form (ngSubmit)="addCategory()" #categoryForm="ngForm">
+<form (ngSubmit)="editCategory()" #categoryForm="ngForm">
 
 	<div class="row">
 		<div class="input-field col s12">
-			<input id="name" type="text" required name='name' [(ngModel)]="category.name">
+			<input id="name" type="text" required name='name' [(ngModel)]="selectedCategory.name">
 			<label for="name">Name</label>
 		</div>
 

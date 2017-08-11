@@ -1,9 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { CategoriesService, AlertService } from '../services/index';
+import { Category } from '../models/index';
 import 'rxjs/Rx';
 import { MaterializeAction } from 'angular2-materialize';
 import { TitleCasePipe } from '../pipes/title-case.pipe';
 import { HumanizePipe } from '../pipes/humanize.pipe';
+import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 
 @Component({
   selector: 'app-categories',
@@ -13,10 +15,10 @@ import { HumanizePipe } from '../pipes/humanize.pipe';
 export class CategoriesComponent implements OnInit {
 
 	categories: any;
-  @Input('category-action-mode') categoryActionMode;
-  modalActions = new EventEmitter<string|MaterializeAction>();
-
+  selectedCategory = new Category(1, '');
 	@Output() onFormResult = new EventEmitter<any>();
+  @ViewChild('modalDialog') modalDialog: ModalDialogComponent;
+  @Output() changeCategory: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
   	protected categoriesService: CategoriesService,
@@ -40,22 +42,29 @@ export class CategoriesComponent implements OnInit {
       });
   }
 
-  // To open modal window
-  openModal(mode){
-    console.log(mode);
-    this.categoryActionMode = mode;
-    this.modalActions.emit({action:"modal", params:['open']});
+  presentAuthDialog(mode, selectedCategory){
+    if (mode == 'editCategory') {
+      if (selectedCategory) {
+        this.selectedCategory = selectedCategory;
+      }
+      this.changeCategory.emit(selectedCategory);
+    }
+    this.modalDialog.openDialog(mode);
   }
 
-  // To open modal window
-  openModalWindow(){
-    console.log("zfasfsd")
-    this.modalActions.emit({action:"modal", params:['open']});
+  // To delete a category
+  deleteCategory(category) {
+    this.categoriesService.deleteCategory(category).subscribe(
+      res => {
+        if(res.status == 204) {
+          this.categories.pop(category);
+        }
+        else {
+          this.alertService.error('Failed to delete category');
+        }
+      },
+      err => {
+        this.alertService.error(err._body);
+      });
   }
-
-  isAddMode(){return this.categoryActionMode == 'addCategory'}
-  isEditMode(){return this.categoryActionMode == 'editCategory'}
-  // addCategory() {
-  //   this.modalActions.emit({action:"modal", params:['open']});
-  // }
 }

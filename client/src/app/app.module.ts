@@ -12,9 +12,10 @@ import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CategoriesComponent } from './categories/categories.component'
-import { AddCategoryComponent } from './categories/add-category.component'
-import { EditCategoryComponent } from './categories/edit-category.component'
+import { CategoriesComponent } from './categories/categories.component';
+import { AddCategoryComponent } from './categories/add-category.component';
+import { EditCategoryComponent } from './categories/edit-category.component';
+import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
 import { AuthService, AlertService, CategoriesService } from './services/index';
 
 import { TitleCasePipe } from './pipes/title-case.pipe';
@@ -38,7 +39,8 @@ import { AuthGuard } from './guards/auth.guard';
     AddCategoryComponent,
     EditCategoryComponent,
     TitleCasePipe,
-    HumanizePipe
+    HumanizePipe,
+    ModalDialogComponent
   ],
   imports: [
     BrowserModule,
