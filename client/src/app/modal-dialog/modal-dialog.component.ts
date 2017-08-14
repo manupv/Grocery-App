@@ -8,13 +8,15 @@ import { MaterializeAction } from 'angular2-materialize';
 })
 export class ModalDialogComponent implements OnInit {
 
-	@Input('modal-mode') modalMode;//: 'login' | 'register' = 'login';
+	@Input('modal-mode') modalMode;
 	modalActions = new EventEmitter<string|MaterializeAction>();
+  ObjRecord;
 
   constructor() { }
 
-  openDialog(mode) {
+  openDialog(mode, obj = null) {
     this.modalMode = mode;
+    this.ObjRecord = obj
     this.modalActions.emit({action:"modal", params:['open']});
   }
 

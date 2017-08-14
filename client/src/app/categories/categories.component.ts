@@ -15,10 +15,8 @@ import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 export class CategoriesComponent implements OnInit {
 
 	categories: any;
-  selectedCategory = new Category(1, '');
-	@Output() onFormResult = new EventEmitter<any>();
+  selectedCategory;
   @ViewChild('modalDialog') modalDialog: ModalDialogComponent;
-  @Output() changeCategory: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
   	protected categoriesService: CategoriesService,
@@ -42,14 +40,8 @@ export class CategoriesComponent implements OnInit {
       });
   }
 
-  presentAuthDialog(mode, selectedCategory){
-    if (mode == 'editCategory') {
-      if (selectedCategory) {
-        this.selectedCategory = selectedCategory;
-      }
-      this.changeCategory.emit(selectedCategory);
-    }
-    this.modalDialog.openDialog(mode);
+  presentAuthDialog(mode, selectedCategory = null){
+    this.modalDialog.openDialog(mode, selectedCategory);
   }
 
   // To delete a category
