@@ -1,4 +1,4 @@
-# Category
-class Category < ApplicationRecord
+# Item
+class Item < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 end

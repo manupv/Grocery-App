@@ -12,6 +12,7 @@
 
 				<add-category *ngIf="isAddMode()"></add-category>
 				<edit-category *ngIf="isEditMode()" [selected-category]="ObjRecord"></edit-category>
+				<add-item *ngIf="isAddItemMode()"></add-item>
 			</div>
 		</div>
 	</div>

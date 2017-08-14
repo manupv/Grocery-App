@@ -17,13 +17,15 @@ import { CategoriesComponent } from './categories/categories.component';
 import { AddCategoryComponent } from './categories/add-category.component';
 import { EditCategoryComponent } from './categories/edit-category.component';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
-import { AuthService, AlertService, CategoriesService } from './services/index';
+import { AddItemComponent } from './items/add-item.component';
+import { AuthService, AlertService, CategoriesService, ItemsService } from './services/index';
 
 import { TitleCasePipe } from './pipes/title-case.pipe';
 import { HumanizePipe } from './pipes/humanize.pipe';
 
 import { AlertDirective } from './directives/alert.directive';
 import { AuthGuard } from './guards/auth.guard';
+import { ItemsComponent } from './items/items.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { AuthGuard } from './guards/auth.guard';
     TitleCasePipe,
     HumanizePipe,
     ModalDialogComponent,
-    FooterComponent
+    FooterComponent,
+    ItemsComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,7 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule,
     MaterializeModule
   ],
-  providers: [AuthService, AlertService, AuthGuard, CategoriesService],
+  providers: [AuthService, AlertService, AuthGuard, CategoriesService, ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
