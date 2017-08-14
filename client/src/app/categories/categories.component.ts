@@ -24,7 +24,7 @@ export class CategoriesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  	this.getCategories();
+  	this.getCategories(); // Fetch categories
   }
 
   // To fetch all categories
@@ -40,6 +40,7 @@ export class CategoriesComponent implements OnInit {
       });
   }
 
+  // To open add/edit modal window
   presentAuthDialog(mode, selectedCategory = null){
     this.modalDialog.openDialog(mode, selectedCategory);
   }
