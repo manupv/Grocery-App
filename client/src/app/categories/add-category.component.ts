@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 import { CategoriesComponent } from './categories.component';
 import { CategoriesService, AlertService } from '../services/index';
@@ -14,8 +14,6 @@ import 'rxjs/Rx';
 export class AddCategoryComponent implements OnInit {
 
   category = new Category(1, '');
-
-  @Output() onFormResult = new EventEmitter<any>();
   @ViewChild('modalDialog') modalDialog: ModalDialogComponent;
 
   constructor(
@@ -32,7 +30,7 @@ export class AddCategoryComponent implements OnInit {
   addCategory() {
     this.categoriesService.addCategory(this.category).subscribe(
       res => {
-        if(res.status == 200) {
+        if(res.status == 201) {
           this.categoryComponent.categories.push(res.json());
           this.modalDialog.closeDialog();
         }

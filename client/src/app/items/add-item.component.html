@@ -6,11 +6,13 @@
 			<label for="name">Name</label>
 		</div>
 		<div class="input-field col s12">
-			<input id="name" type="text" required name='name' [(ngModel)]="item.description">
+			<input id="description" type="text" required name='description' [(ngModel)]="item.description">
 			<label for="name">Description</label>
 		</div>
 		<div class="input-field col s12">
-			<input id="name" type="text" required name='name' [(ngModel)]="item.category_id">
+			<select id="category_id" required name="category_id" [(ngModel)]="item.category_id" class="browser-default" placeholder="SDSD">
+				<option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+			</select>
 			<label for="name">Category</label>
 		</div>
 
