@@ -37,8 +37,6 @@ export class CategoriesService {
 
   // To delete a category
   deleteCategory(category) {
-    let body = JSON.stringify({ category: category });
-
     return this.http.delete('http://localhost:3000/categories/' + category.id.toString(), { headers: contentHeaders })
       .map((res: Response) => res);
   }

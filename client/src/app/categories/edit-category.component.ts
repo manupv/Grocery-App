@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { CategoriesService, AlertService } from '../services/index';
 import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 import { Category } from '../models/index';
-import { Router } from '@angular/router';
 import 'rxjs/Rx';
 
 @Component({

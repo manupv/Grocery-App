@@ -18,6 +18,7 @@ import { AddCategoryComponent } from './categories/add-category.component';
 import { EditCategoryComponent } from './categories/edit-category.component';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
 import { AddItemComponent } from './items/add-item.component';
+import { EditItemComponent } from './items/edit-item.component';
 import { AuthService, AlertService, CategoriesService, ItemsService } from './services/index';
 
 import { TitleCasePipe } from './pipes/title-case.pipe';
@@ -46,7 +47,8 @@ import { ItemsComponent } from './items/items.component';
     ModalDialogComponent,
     FooterComponent,
     ItemsComponent,
-    AddItemComponent
+    AddItemComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,

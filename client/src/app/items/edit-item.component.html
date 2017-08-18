@@ -1,0 +1,27 @@
+<form (ngSubmit)="editItem()" #itemForm="ngForm">
+
+	<div class="row">
+		<div class="input-field col s12">
+			<input id="name" type="text" required name='name' [(ngModel)]="selectedItem.name">
+			<label for="name">Name</label>
+		</div>
+		<div class="input-field col s12">
+			<input id="description" type="text" required name='description' [(ngModel)]="selectedItem.description">
+			<label for="name">Description</label>
+		</div>
+		<div class="input-field col s12">
+			<select id="category_id" required name="category_id" [(ngModel)]="selectedItem.category_id" class="browser-default" placeholder="SDSD">
+				<option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+			</select>
+			<label for="name">Category</label>
+		</div>
+		
+		<div class="col s12 ">
+			<button type="submit" [disabled]="!itemForm.form.valid" class="waves-effect waves-light btn blue right">
+				Save
+			</button>
+		</div>
+	</div>
+
+</form>
+<app-modal-dialog #modalDialog></app-modal-dialog>

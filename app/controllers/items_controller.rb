@@ -3,9 +3,9 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = Item.all
+    @items = Item.includes(:category).all
 
-    render json: @items
+    render json: @items, include: { category: { only: :name } }
   end
 
   # GET /items/1

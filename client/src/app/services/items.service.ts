@@ -24,4 +24,18 @@ export class ItemsService {
     return this.http.post('http://localhost:3000/items', body, { headers: contentHeaders })
       .map((res: Response) => res);
   }
+
+  // To edit an item
+  editItem(item) {
+    let body = JSON.stringify({ item: item });
+
+    return this.http.put('http://localhost:3000/items/' + item.id.toString(), body, { headers: contentHeaders })
+      .map((res: Response) => res);
+  }
+
+  // To delete an item
+  deleteItem(item) {
+    return this.http.delete('http://localhost:3000/items/' + item.id.toString(), { headers: contentHeaders })
+      .map((res: Response) => res);
+  }
 }

@@ -50,7 +50,8 @@ export class CategoriesComponent implements OnInit {
     this.categoriesService.deleteCategory(category).subscribe(
       res => {
         if(res.status == 204) {
-          this.categories.pop(category);
+          var index = this.categories.indexOf(category);
+          this.categories.splice(index, 1);
         }
         else {
           this.alertService.error('Failed to delete category');

@@ -1,3 +1,10 @@
 .category-add {
 	margin-top: 10px;
 }
+.category-action-head {
+  width: 200px;
+  text-align: right;
+}
+.category-actions {
+  width: 200px;
+}

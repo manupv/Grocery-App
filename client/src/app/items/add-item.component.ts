@@ -8,7 +8,7 @@ import 'rxjs/Rx';
 @Component({
   selector: 'add-item',
   templateUrl: './add-item.component.html',
-  styleUrls: ['./items.component.sass']
+  styleUrls: ['./items.component.css']
 })
 export class AddItemComponent implements OnInit {
 
