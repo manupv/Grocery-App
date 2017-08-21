@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { ItemsComponent } from './items.component';
 import { ItemsService, CategoriesService, AlertService } from '../services/index';
 import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 import { Item } from '../models/index';
@@ -17,6 +18,7 @@ export class EditItemComponent implements OnInit {
 
   constructor(
     protected itemsService: ItemsService,
+    public itemsComponent: ItemsComponent,
     private alertService: AlertService,
     public categoriesService: CategoriesService
   ) { }
@@ -44,6 +46,8 @@ export class EditItemComponent implements OnInit {
       res => {
         if(res.status == 200) {
           this.selectedItem = res.json();
+          let index = this.itemsComponent.items.indexOf(this.selectedItem);
+          this.itemsComponent.items.splice(index, 1, this.selectedItem);
           this.modalDialog.closeDialog();
         }
         else {

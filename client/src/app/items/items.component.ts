@@ -21,7 +21,7 @@ export class ItemsComponent implements OnInit {
   	this.getItems(); // Fetch items
   }
 
-  // To fetch all categories
+  // To fetch all items
   getItems() {
     this.itemsService.getItems().subscribe(
       res => {

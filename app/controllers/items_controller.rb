@@ -1,3 +1,4 @@
+# ItemsController - To manage items
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
 
@@ -18,7 +19,8 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      render json: @item, status: :created, location: @item
+      render json: @item, include: { category: { only: :name } },
+             status: :created, location: @item
     else
       render json: @item.errors, status: :unprocessable_entity
     end
@@ -27,7 +29,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   def update
     if @item.update(item_params)
-      render json: @item
+      render json: @item, include: { category: { only: :name } }
     else
       render json: @item.errors, status: :unprocessable_entity
     end
@@ -39,13 +41,14 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def item_params
-      params.require(:item).permit(:name, :description, :category_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def item_params
+    params.require(:item).permit(:name, :description, :category_id)
+  end
 end

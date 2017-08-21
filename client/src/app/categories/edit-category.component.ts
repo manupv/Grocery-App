@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { CategoriesService, AlertService } from '../services/index';
 import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
+import { CategoriesComponent } from './categories.component';
 import { Category } from '../models/index';
 import 'rxjs/Rx';
 
@@ -16,7 +17,8 @@ export class EditCategoryComponent implements OnInit {
 
   constructor(
     protected categoriesService: CategoriesService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    public categoryComponent: CategoriesComponent
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,8 @@ export class EditCategoryComponent implements OnInit {
       res => {
         if(res.status == 200) {
           this.selectedCategory = res.json();
+          let index = this.categoryComponent.categories.indexOf(this.selectedCategory);
+          this.categoryComponent.categories.splice(index, 1, this.selectedCategory);
           this.modalDialog.closeDialog();
         }
         else {
