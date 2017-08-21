@@ -17,16 +17,20 @@ import { CategoriesComponent } from './categories/categories.component';
 import { AddCategoryComponent } from './categories/add-category.component';
 import { EditCategoryComponent } from './categories/edit-category.component';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
+import { ItemsComponent } from './items/items.component';
 import { AddItemComponent } from './items/add-item.component';
 import { EditItemComponent } from './items/edit-item.component';
-import { AuthService, AlertService, CategoriesService, ItemsService } from './services/index';
+import { ListsComponent } from './lists/lists.component';
+import { AddListComponent } from './lists/add-list.component';
+import { EditListComponent } from './lists/edit-list.component';
+import { AuthService, AlertService, CategoriesService, ItemsService, ListsService } from './services/index';
 
 import { TitleCasePipe } from './pipes/title-case.pipe';
 import { HumanizePipe } from './pipes/humanize.pipe';
 
 import { AlertDirective } from './directives/alert.directive';
 import { AuthGuard } from './guards/auth.guard';
-import { ItemsComponent } from './items/items.component';
+
 
 
 @NgModule({
@@ -48,7 +52,10 @@ import { ItemsComponent } from './items/items.component';
     FooterComponent,
     ItemsComponent,
     AddItemComponent,
-    EditItemComponent
+    EditItemComponent,
+    ListsComponent,
+    AddListComponent,
+    EditListComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +64,9 @@ import { ItemsComponent } from './items/items.component';
     AppRoutingModule,
     MaterializeModule
   ],
-  providers: [AuthService, AlertService, AuthGuard, CategoriesService, ItemsService],
+  providers: [
+    AuthService, AlertService, AuthGuard, CategoriesService, ItemsService, ListsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

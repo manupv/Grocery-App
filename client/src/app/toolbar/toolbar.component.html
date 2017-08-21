@@ -9,6 +9,7 @@
 
             <li> <a *ngIf="loggedIn()" [routerLink]="['/categories']" class="black-text">CATEGORIES</a></li>
             <li> <a *ngIf="loggedIn()" [routerLink]="['/items']" class="black-text">ITEMS</a></li>
+            <li> <a *ngIf="loggedIn()" [routerLink]="['/lists']" class="black-text">LISTS</a></li>
             <!-- <li> <a *ngIf="loggedIn()" [routerLink]="['/items']" class="black-text">ITEMS</a></li> -->
             <li> <a *ngIf="loggedIn()" [routerLink]="['/profile']" class="black-text">PROFILE</a></li>
             <li> <a *ngIf="loggedIn()" (click)="logout()" class="black-text">LOGOUT</a></li>

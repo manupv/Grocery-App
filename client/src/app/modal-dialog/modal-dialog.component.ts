@@ -31,4 +31,6 @@ export class ModalDialogComponent implements OnInit {
   isEditMode(){ return this.modalMode == 'editCategory' }
   isAddItemMode(){ return this.modalMode == 'addItem' }
   isEditItemMode(){ return this.modalMode == 'editItem' }
+  isAddListMode(){ return this.modalMode == 'addList' }
+  isEditListMode(){ return this.modalMode == 'editList' }
 }

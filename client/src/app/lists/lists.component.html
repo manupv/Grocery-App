@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col l8 s12 offset-l2">
+		<a (click)="presentAuthDialog('addList')" class="waves-effect waves-light btn list-add"><i class="material-icons left">add</i>Add List</a>
+	</div>
+	<div class="col l8 s12 offset-l2">
+		<table class="bordered highlight responsive-table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th class="list-action-head">Actions</th>
+				</tr>
+			</thead>
+			<tbody *ngIf="lists">
+				<tr *ngFor="let list of lists">
+					<td>{{list.name}}</td>
+					<td class="list-actions">
+						<a class="secondary-content" (click)="presentAuthDialog('editList', list)"><i class="material-icons">mode_edit</i></a>
+						<a class="secondary-content" (click)="deleteList(list)"><i class="material-icons right">mode_delete</i></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>
+<app-modal-dialog #modalDialog></app-modal-dialog>

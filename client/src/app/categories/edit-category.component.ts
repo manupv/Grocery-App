@@ -29,8 +29,8 @@ export class EditCategoryComponent implements OnInit {
     this.categoriesService.editCategory(this.selectedCategory).subscribe(
       res => {
         if(res.status == 200) {
-          this.selectedCategory = res.json();
           let index = this.categoryComponent.categories.indexOf(this.selectedCategory);
+          this.selectedCategory = res.json();
           this.categoryComponent.categories.splice(index, 1, this.selectedCategory);
           this.modalDialog.closeDialog();
         }

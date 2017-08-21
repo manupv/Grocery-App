@@ -6,6 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AddCategoryComponent } from './categories/add-category.component'
 import { ItemsComponent } from './items/items.component';
+import { ListsComponent } from './lists/lists.component';
 
 import { AuthGuard } from './guards/auth.guard'
 
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path: 'items',
     component: ItemsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'lists',
+    component: ListsComponent,
     canActivate: [AuthGuard]
   }
 ];

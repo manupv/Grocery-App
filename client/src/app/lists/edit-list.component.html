@@ -1,0 +1,17 @@
+<form (ngSubmit)="editList()" #listForm="ngForm">
+
+	<div class="row">
+		<div class="input-field col s12">
+			<input id="name" type="text" required name='name' [(ngModel)]="selectedList.name">
+			<label for="name">Name</label>
+		</div>
+
+		<div class="col s12 ">
+			<button type="submit" [disabled]="!listForm.form.valid" class="waves-effect waves-light btn blue right">
+				Save
+			</button>
+		</div>
+	</div>
+
+</form>
+<app-modal-dialog #modalDialog></app-modal-dialog>

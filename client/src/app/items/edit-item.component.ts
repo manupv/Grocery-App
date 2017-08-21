@@ -45,8 +45,8 @@ export class EditItemComponent implements OnInit {
     this.itemsService.editItem(this.selectedItem).subscribe(
       res => {
         if(res.status == 200) {
-          this.selectedItem = res.json();
           let index = this.itemsComponent.items.indexOf(this.selectedItem);
+          this.selectedItem = res.json();
           this.itemsComponent.items.splice(index, 1, this.selectedItem);
           this.modalDialog.closeDialog();
         }
