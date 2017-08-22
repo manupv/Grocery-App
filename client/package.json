@@ -50,7 +50,8 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.0.0",
-    "zone.js": "^0.7.6"
+    "zone.js": "^0.7.6",
+    "npm": "3.10.8"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.38",
