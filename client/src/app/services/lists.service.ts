@@ -13,7 +13,7 @@ export class ListsService {
 
   // To fetch lists
   getLists() {
-    return this.http.get('http://localhost:3000/lists', { headers: contentHeaders })
+    return this.http.get('http://localhost:3000/apis/v1/lists', { headers: contentHeaders })
 		.map((res: Response) => res);
   }
 
@@ -21,7 +21,7 @@ export class ListsService {
   addList(list) {
     let body = JSON.stringify({ list: list });
 
-    return this.http.post('http://localhost:3000/lists', body, { headers: contentHeaders })
+    return this.http.post('http://localhost:3000/apis/v1/lists', body, { headers: contentHeaders })
       .map((res: Response) => res);
   }
 
@@ -29,13 +29,13 @@ export class ListsService {
   editList(list) {
     let body = JSON.stringify({ list: list });
 
-    return this.http.put('http://localhost:3000/lists/' + list.id.toString(), body, { headers: contentHeaders })
+    return this.http.put('http://localhost:3000/apis/v1/lists/' + list.id.toString(), body, { headers: contentHeaders })
       .map((res: Response) => res);
   }
 
   // To delete a list
   deleteList(list) {
-    return this.http.delete('http://localhost:3000/lists/' + list.id.toString(), { headers: contentHeaders })
+    return this.http.delete('http://localhost:3000/apis/v1/lists/' + list.id.toString(), { headers: contentHeaders })
       .map((res: Response) => res);
   }
 }

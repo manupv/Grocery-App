@@ -1,2 +1,2 @@
-web: bundle exec puma -C config/puma.rb -p 3000
+web: bundle exec puma -C config/puma.rb
 client: sh -c 'cd ./client/ && npm start'
