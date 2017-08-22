@@ -23,6 +23,8 @@ import { EditItemComponent } from './items/edit-item.component';
 import { ListsComponent } from './lists/lists.component';
 import { AddListComponent } from './lists/add-list.component';
 import { EditListComponent } from './lists/edit-list.component';
+
+import { AlertComponent } from './directives/alert.component';
 import { AuthService, AlertService, CategoriesService, ItemsService, ListsService } from './services/index';
 
 import { TitleCasePipe } from './pipes/title-case.pipe';
@@ -55,7 +57,8 @@ import { AuthGuard } from './guards/auth.guard';
     EditItemComponent,
     ListsComponent,
     AddListComponent,
-    EditListComponent
+    EditListComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
