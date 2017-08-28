@@ -2,9 +2,5 @@
     "/apis": {
         "target": "http://localhost:3000",
         "secure": "false"
-    },
-    "/system": {
-        "target": "http://localhost:3000",
-        "secure": "false"
     }
 }
