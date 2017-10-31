@@ -15,7 +15,7 @@ export class CategoriesService {
 
   // To fetch categories
   getCategories() {
-    return this.http.get('http://localhost:3000/apis/v1/categories', { headers: contentHeaders })
+    return this.http.get('/apis/v1/categories', { headers: contentHeaders })
 		.map((res: Response) => res);
   }
 
@@ -23,7 +23,7 @@ export class CategoriesService {
   addCategory(category) {
     let body = JSON.stringify({ category: category });
 
-    return this.http.post('http://localhost:3000/apis/v1/categories', body, { headers: contentHeaders })
+    return this.http.post('/apis/v1/categories', body, { headers: contentHeaders })
       .map((res: Response) => res);
   }
 
@@ -31,13 +31,13 @@ export class CategoriesService {
   editCategory(category) {
     let body = JSON.stringify({ category: category });
 
-    return this.http.put('http://localhost:3000/apis/v1/categories/' + category.id.toString(), body, { headers: contentHeaders })
+    return this.http.put('/apis/v1/categories/' + category.id.toString(), body, { headers: contentHeaders })
       .map((res: Response) => res);
   }
 
   // To delete a category
   deleteCategory(category) {
-    return this.http.delete('http://localhost:3000/apis/v1/categories/' + category.id.toString(), { headers: contentHeaders })
+    return this.http.delete('/apis/v1/categories/' + category.id.toString(), { headers: contentHeaders })
       .map((res: Response) => res);
   }
 }

@@ -33,8 +33,6 @@ export class RegisterFormComponent implements OnInit {
 
   // Signup functionality
   signup(event, email, password, passwordConfirmation, nickName, name) {
-    console.log("signUpUser-------------");
-    console.log(this.signUpUser);
     event.preventDefault();
     // this.authService.userLogin(email, password);
     this.authService.userSignup(this.signUpUser).subscribe(

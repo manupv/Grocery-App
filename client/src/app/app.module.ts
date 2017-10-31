@@ -62,11 +62,11 @@ import { AuthGuard } from './guards/auth.guard';
     AlertComponent
   ],
   imports: [
+    MaterializeModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    MaterializeModule
+    AppRoutingModule
   ],
   providers: [
     AuthService, AlertService, AuthGuard, CategoriesService, ItemsService, ListsService

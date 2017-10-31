@@ -16,7 +16,7 @@ export class AuthService {
   userLogin(email, password) {
     let body = JSON.stringify({ email, password });
 
-    return this.http.post('http://localhost:3000/apis/v1/auth/sign_in', body, { headers: contentHeaders })
+    return this.http.post('/apis/v1/auth/sign_in', body, { headers: contentHeaders })
     	.map((res: Response) => res);
   }
 
@@ -29,7 +29,7 @@ export class AuthService {
     let name = signUpUser.name;
   	let body = JSON.stringify({ email, password, password_confirmation, nickname, name });
 
-    return this.http.post('http://localhost:3000/apis/v1/auth', body, { headers: contentHeaders })
+    return this.http.post('/apis/v1/auth', body, { headers: contentHeaders })
     	.map((res: Response) => res);
   }
 
@@ -48,7 +48,7 @@ export class AuthService {
   	headers.append('client', client);
   	headers.append('uid', uid);
 
-  	return this.http.delete('http://localhost:3000/apis/v1/auth/sign_out', { headers: headers })
+    return this.http.delete('/apis/v1/auth/sign_out', { headers: headers })
   		.map((res: Response) => res);
   }
 
