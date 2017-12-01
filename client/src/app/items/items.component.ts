@@ -5,7 +5,7 @@ import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css']
+  styleUrls: ['./items.component.css', '../app.component.css']
 })
 export class ItemsComponent implements OnInit {
 

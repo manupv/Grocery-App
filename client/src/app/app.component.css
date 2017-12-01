@@ -1,3 +1,28 @@
 .container-div {
   min-height: 638px;
 }
+.item-list {
+    min-height: 58px !important;
+    height: 58px !important;
+    padding: 0 20px 0 20px;
+}
+.item-list-head-icon {
+    padding: 8px 0 0 0;
+}
+.item-list-header {
+	padding: 6px 0 0px 0;
+	float: left;
+	width: 50%;
+}
+.item-list-actions {
+	padding: 6px 6px 0 0;
+	float: left;
+	width: 50%;
+}
+.bold {
+	font-weight: bold;
+}
+.secondary-content {
+	float: right;
+	color: #81c784;
+}

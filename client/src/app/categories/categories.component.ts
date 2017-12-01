@@ -10,7 +10,7 @@ import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  styleUrls: ['./categories.component.css', '../app.component.css']
 })
 export class CategoriesComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { ModalDialogComponent } from '../modal-dialog/modal-dialog.component';
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.css']
+  styleUrls: ['./lists.component.css', '../app.component.css']
 })
 export class ListsComponent implements OnInit {
 

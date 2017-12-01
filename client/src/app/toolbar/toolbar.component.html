@@ -1,18 +1,18 @@
 <nav class="teal lighten-4" role="navigation">
 
     <div class="nav-wrapper container black-text">
-        <a [routerLink]="['']" id="logo-container" class="brand-logo black-text">Logo</a>
+        <a [routerLink]="['']" id="logo-container" class="brand-logo teal-text text-darken-4">Logo</a>
 
         <ul class="right hide-on-med-and-down">
-            <li> <a *ngIf="!loggedIn()" (click)="presentAuthDialog()" class="black-text">LOGIN</a></li>
-            <li> <a *ngIf="!loggedIn()" (click)="presentAuthDialog('register')" class="black-text">REGISTER</a></li>
+            <li> <a *ngIf="!loggedIn()" (click)="presentAuthDialog()" class="teal-text text-darken-4">LOGIN</a></li>
+            <li> <a *ngIf="!loggedIn()" (click)="presentAuthDialog('register')" class="teal-text text-darken-4">REGISTER</a></li>
 
-            <li> <a *ngIf="loggedIn()" [routerLink]="['/categories']" class="black-text">CATEGORIES</a></li>
-            <li> <a *ngIf="loggedIn()" [routerLink]="['/items']" class="black-text">ITEMS</a></li>
-            <li> <a *ngIf="loggedIn()" [routerLink]="['/lists']" class="black-text">LISTS</a></li>
+            <li> <a *ngIf="loggedIn()" [routerLink]="['/categories']" class="teal-text text-darken-4">CATEGORIES</a></li>
+            <li> <a *ngIf="loggedIn()" [routerLink]="['/items']" class="teal-text text-darken-4">ITEMS</a></li>
+            <li> <a *ngIf="loggedIn()" [routerLink]="['/lists']" class="teal-text text-darken-4">LISTS</a></li>
             <!-- <li> <a *ngIf="loggedIn()" [routerLink]="['/items']" class="black-text">ITEMS</a></li> -->
-            <li> <a *ngIf="loggedIn()" [routerLink]="['/profile']" class="black-text">PROFILE</a></li>
-            <li> <a *ngIf="loggedIn()" (click)="logout()" class="black-text">LOGOUT</a></li>
+            <li> <a *ngIf="loggedIn()" [routerLink]="['/profile']" class="teal-text text-darken-4">PROFILE</a></li>
+            <li> <a *ngIf="loggedIn()" (click)="logout()" class="teal-text text-darken-4">LOGOUT</a></li>
         </ul>
     </div>
 
